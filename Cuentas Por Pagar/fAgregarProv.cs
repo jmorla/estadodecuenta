@@ -32,5 +32,10 @@ namespace Cuentas_Por_Pagar
                 "HA SIDO AGREGADO", "AGREGAR PROVEEDOR");
             this.Close();
         }
+
+        private void fAgregarProv_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new fProveedores().Show();
+        }
     }
 }

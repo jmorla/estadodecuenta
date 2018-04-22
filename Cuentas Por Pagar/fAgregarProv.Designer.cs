@@ -169,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "fAgregarProv";
             this.Text = "Registrar datos proveedores";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fAgregarProv_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

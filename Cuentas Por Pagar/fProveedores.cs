@@ -73,7 +73,7 @@ namespace Cuentas_Por_Pagar
             fAgregarProv FMP = new fAgregarProv();
 
             /*Abrimos el formulario y actualizamos DataGrid View DGVPROVEEDORES  después de cerrarlo */
-
+            this.Hide();
             FMP.FormClosed += new
 
             System.Windows.Forms.FormClosedEventHandler(fProveedores_FormClosed); FMP.Show();
@@ -92,13 +92,21 @@ namespace Cuentas_Por_Pagar
         private void btnModificar_Click(object sender, EventArgs e)
         {
             DataGridViewRow FILA = dgProveedores.CurrentRow;
-            string codigo = Convert.ToString(FILA.Cells[0].Value);
+            string codigo = "NON";
+            try
+            {
+                codigo = Convert.ToString(FILA.Cells[0].Value);
+            }
+            catch {
+                MessageBox.Show("Seleccione un registro!");
+                return;
+            }
             fModificarProv FMP = new fModificarProv(codigo);
 
             FMP.FormClosed += new
 
             System.Windows.Forms.FormClosedEventHandler(fProveedores_FormClosed);
-
+            this.Hide();
             FMP.Show();
         }
 
@@ -116,6 +124,11 @@ namespace Cuentas_Por_Pagar
                 MessageBox.Show("SE HA BORRADO EL PROVEEDOR" +txtNombres.Text +" "+ txtApellidos.Text, "REGISTRO ELIMINADO");
                 DatosProveedores.MOSTRARDATOS();
 
+                dgProveedores.DataSource = DatosProveedores.MOSTRARDATOS();
+
+                //OCULTAMOS LA COLUMNA FACTURAS PARA QUE NO APAREZCA EN EL DATAGRID VIEW.
+
+                dgProveedores.Columns["FACTURAS"].Visible = false;
             }
         }
     }

@@ -29,6 +29,8 @@ namespace Cuentas_Por_Pagar
 
             txtNombres.Text = prov.NOMBRES;
 
+            txtApellidos.Text = prov.APELLIDOS;
+            
             txtDireccion.Text = prov.DIRECCION;
 
             txtCiudad.Text = prov.CIUDAD;
@@ -52,6 +54,12 @@ namespace Cuentas_Por_Pagar
             MessageBox.Show("EL REGISTRO SE MODIFICÓ EXITOSAMENTE.", "MODIFICACIÓN");
             
             Close();
+
          }
+
+        private void fModificarProv_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new fProveedores().Show();
+        }
     }
 }

@@ -74,6 +74,12 @@
     <Compile Include="fAgregarProv.Designer.cs">
       <DependentUpon>fAgregarProv.cs</DependentUpon>
     </Compile>
+    <Compile Include="FFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFactura.Designer.cs">
+      <DependentUpon>FFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMenuPri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="fAgregarProv.resx">
       <DependentUpon>fAgregarProv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFactura.resx">
+      <DependentUpon>FFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMenuPri.resx">
       <DependentUpon>fMenuPri.cs</DependentUpon>

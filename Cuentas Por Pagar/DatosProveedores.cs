@@ -28,7 +28,6 @@ namespace Cuentas_Por_Pagar
         public static List<PROVEEDORES> BUSCARPORCODIGO(string codigo)
 
         {
-
             using (SCXPJORGEEntities BD = new SCXPJORGEEntities())
 
             {
@@ -44,7 +43,7 @@ namespace Cuentas_Por_Pagar
                 select P).ToList();
 
                 /*StartsWith HACE QUE VAYA MOSTRANDO LOS PROVEEDORES QUE    EMPIEZEN CON LAS LETRAS QUE VAMOS ESCRIBIENDO*/
-
+            
                 return INFO;
 
             }
@@ -128,7 +127,7 @@ namespace Cuentas_Por_Pagar
         public static void INSERTARPROVEEDOR
         (string codigo, string nombres, string apellidos, string direccion, string ciudad, string telefono)
         {
-
+            codigo = generateId();
             using (SCXPJORGEEntities BD = new SCXPJORGEEntities())
             {
 
@@ -150,6 +149,7 @@ namespace Cuentas_Por_Pagar
 
                 });
 
+                
                 BD.SaveChanges();
 
             }
@@ -234,6 +234,12 @@ namespace Cuentas_Por_Pagar
 
             }
 
+        }
+
+        private static String generateId() {
+            Random random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTWXYZ1234567890";
+            return new string(Enumerable.Repeat(chars, 6).Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

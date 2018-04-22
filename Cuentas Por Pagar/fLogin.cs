@@ -43,10 +43,8 @@ namespace Cuentas_Por_Pagar
 
                 DataGridViewRow FILA= dgvUsuarios.CurrentRow;
 
-                //Para copiar los valores de las columnas en las variables US y CL
-
+                //Para copiar los valores de las columnas en las variables US y C
                 string US=Convert.ToString(FILA.Cells[0].Value);
-
                 string CL=Convert.ToString(FILA.Cells[1].Value);
 
                 //Para validar el usuario y la contraseña
@@ -55,6 +53,7 @@ namespace Cuentas_Por_Pagar
                 {
                     fMenuPri FP=new fMenuPri();
                     FP.Show();
+                    this.Hide();
                 }
 
                 else{

@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteEstadoDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +46,7 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,28 +80,22 @@
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
-            // mantenimientoToolStripMenuItem
-            // 
-            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
-            // 
             // estadoDeCuentaToolStripMenuItem
             // 
             this.estadoDeCuentaToolStripMenuItem.Name = "estadoDeCuentaToolStripMenuItem";
-            this.estadoDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.estadoDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
             this.estadoDeCuentaToolStripMenuItem.Text = "Estado de cuenta";
             // 
             // reporteProveedoresToolStripMenuItem
             // 
             this.reporteProveedoresToolStripMenuItem.Name = "reporteProveedoresToolStripMenuItem";
-            this.reporteProveedoresToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.reporteProveedoresToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
             this.reporteProveedoresToolStripMenuItem.Text = "Reporte Proveedores";
             // 
             // reporteEstadoDeCuentaToolStripMenuItem
             // 
             this.reporteEstadoDeCuentaToolStripMenuItem.Name = "reporteEstadoDeCuentaToolStripMenuItem";
-            this.reporteEstadoDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.reporteEstadoDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
             this.reporteEstadoDeCuentaToolStripMenuItem.Text = "Reporte Estado de cuenta";
             // 
             // facturasToolStripMenuItem
@@ -181,6 +175,13 @@
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(12, 20);
             // 
+            // mantenimientoToolStripMenuItem
+            // 
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(208, 23);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            this.mantenimientoToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem_Click);
+            // 
             // fMenuPri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,7 +202,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadoDeCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteEstadoDeCuentaToolStripMenuItem;
@@ -218,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripTextBox mantenimientoToolStripMenuItem;
     }
 }

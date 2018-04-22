@@ -169,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "fModificarProv";
             this.Text = "Modificar datos proveedores";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fModificarProv_FormClosed);
             this.Load += new System.EventHandler(this.fModificarProv_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

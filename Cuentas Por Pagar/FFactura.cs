@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Cuentas_Por_Pagar
 {
-    public partial class fMenuPri : Form
+    public partial class FFactura : Form
     {
-        
-
-        public fMenuPri()
+        public FFactura()
         {
             InitializeComponent();
-        }
-
-        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fProveedores fp = new fProveedores();
-
-            fp.Show();
-
         }
     }
 }

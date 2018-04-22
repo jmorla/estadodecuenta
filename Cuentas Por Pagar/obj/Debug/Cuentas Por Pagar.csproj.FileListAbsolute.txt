@@ -1,0 +1,17 @@
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\bin\Debug\Cuentas Por Pagar.exe.config
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\bin\Debug\Cuentas Por Pagar.exe
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\bin\Debug\Cuentas Por Pagar.pdb
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\bin\Debug\EntityFramework.dll
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\bin\Debug\EntityFramework.xml
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas_Por_Pagar.fAgregarProv.resources
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas_Por_Pagar.fMenuPri.resources
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas_Por_Pagar.fModificarProv.resources
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas_Por_Pagar.FInicio.resources
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas_Por_Pagar.fProveedores.resources
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas_Por_Pagar.Properties.Resources.resources
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas Por Pagar.csproj.GenerateResource.Cache
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas Por Pagar.exe
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas Por Pagar.pdb
+C:\Users\jmorla\Documents\Visual Studio 2012\Projects\Cuentas Por Pagar\Cuentas Por Pagar\obj\Debug\Cuentas Por Pagar.csprojResolveAssemblyReference.cache

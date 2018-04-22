@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SCXPJORGEModelStoreContainer" CdmEntityContainer="SCXPJORGEEntities">
+    <EntitySetMapping Name="CHEQUES">
+      <EntityTypeMapping TypeName="SCXPJORGEModel.CHEQUES">
+        <MappingFragment StoreEntitySet="CHEQUES">
+          <ScalarProperty Name="NUMERO_CHEQUE" ColumnName="NUMERO_CHEQUE" />
+          <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
+          <ScalarProperty Name="VALOR_CHEQUE" ColumnName="VALOR_CHEQUE" />
+          <ScalarProperty Name="FECHA_CHEQUE" ColumnName="FECHA_CHEQUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURAS">
+      <EntityTypeMapping TypeName="SCXPJORGEModel.FACTURAS">
+        <MappingFragment StoreEntitySet="FACTURAS">
+          <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="VALOR_FACTURA" ColumnName="VALOR_FACTURA" />
+          <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+          <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDORES">
+      <EntityTypeMapping TypeName="SCXPJORGEModel.PROVEEDORES">
+        <MappingFragment StoreEntitySet="PROVEEDORES">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="SCXPJORGEModel.USUARIOS">
+        <MappingFragment StoreEntitySet="USUARIOS">
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTADO_DE_CUENTA">
+      <EntityTypeMapping TypeName="SCXPJORGEModel.ESTADO_DE_CUENTA">
+        <MappingFragment StoreEntitySet="ESTADO DE CUENTA">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="PAGOS" ColumnName="PAGOS" />
+          <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

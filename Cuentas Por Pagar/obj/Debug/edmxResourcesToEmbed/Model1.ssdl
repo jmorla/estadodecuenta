@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SCXPJORGEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHEQUES">
+    <Key>
+      <PropertyRef Name="NUMERO_CHEQUE" />
+    </Key>
+    <Property Name="NUMERO_CHEQUE" Type="int" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="int" Nullable="false" />
+    <Property Name="VALOR_CHEQUE" Type="money" />
+    <Property Name="FECHA_CHEQUE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FACTURAS">
+    <Key>
+      <PropertyRef Name="NUMERO_FACTURA" />
+    </Key>
+    <Property Name="NUMERO_FACTURA" Type="int" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="VALOR_FACTURA" Type="money" />
+    <Property Name="FECHA_FACTURA" Type="datetime" />
+    <Property Name="FECHA_VENCIMIENTO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PROVEEDORES">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="NOMBRES" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="APELLIDOS" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="35" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="25" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="USUARIO" />
+    </Key>
+    <Property Name="USUARIO" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLAVE" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SCXPJORGE.dbo.ESTADO DE CUENTA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ESTADO DE CUENTA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="NOMBRES" />
+      <PropertyRef Name="APELLIDOS" />
+    </Key>
+    <Property Name="CODIGO" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="NOMBRES" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="APELLIDOS" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="MONTO" Type="money" />
+    <Property Name="PAGOS" Type="money" />
+    <Property Name="BALANCE" Type="money" />
+  </EntityType>
+  <Association Name="FACTPROV">
+    <End Role="PROVEEDORES" Type="Self.PROVEEDORES" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDORES">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="CODIGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHECKES">
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CHEQUES" Type="Self.CHEQUES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURAS">
+        <PropertyRef Name="NUMERO_FACTURA" />
+      </Principal>
+      <Dependent Role="CHEQUES">
+        <PropertyRef Name="NUMERO_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SCXPJORGEModelStoreContainer">
+    <EntitySet Name="CHEQUES" EntityType="Self.CHEQUES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURAS" EntityType="Self.FACTURAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVEEDORES" EntityType="Self.PROVEEDORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTADO DE CUENTA" EntityType="Self.ESTADO DE CUENTA" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ESTADO DE CUENTA].[CODIGO] AS [CODIGO], 
+    [ESTADO DE CUENTA].[NOMBRES] AS [NOMBRES], 
+    [ESTADO DE CUENTA].[APELLIDOS] AS [APELLIDOS], 
+    [ESTADO DE CUENTA].[MONTO] AS [MONTO], 
+    [ESTADO DE CUENTA].[PAGOS] AS [PAGOS], 
+    [ESTADO DE CUENTA].[BALANCE] AS [BALANCE]
+    FROM [dbo].[ESTADO DE CUENTA] AS [ESTADO DE CUENTA]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FACTPROV" Association="Self.FACTPROV">
+      <End Role="PROVEEDORES" EntitySet="PROVEEDORES" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHECKES" Association="Self.FK_CHECKES">
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+      <End Role="CHEQUES" EntitySet="CHEQUES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

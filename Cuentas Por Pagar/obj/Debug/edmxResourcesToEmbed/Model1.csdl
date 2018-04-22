@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SCXPJORGEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHEQUES">
+    <Key>
+      <PropertyRef Name="NUMERO_CHEQUE" />
+    </Key>
+    <Property Name="NUMERO_CHEQUE" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="VALOR_CHEQUE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FECHA_CHEQUE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FACTURAS" Relationship="Self.FK_CHECKES" FromRole="CHEQUES" ToRole="FACTURAS" />
+  </EntityType>
+  <EntityType Name="FACTURAS">
+    <Key>
+      <PropertyRef Name="NUMERO_FACTURA" />
+    </Key>
+    <Property Name="NUMERO_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VALOR_FACTURA" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FECHA_FACTURA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_VENCIMIENTO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CHEQUES" Relationship="Self.FK_CHECKES" FromRole="FACTURAS" ToRole="CHEQUES" />
+    <NavigationProperty Name="PROVEEDORES" Relationship="Self.FACTPROV" FromRole="FACTURAS" ToRole="PROVEEDORES" />
+  </EntityType>
+  <EntityType Name="PROVEEDORES">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRES" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDOS" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="CIUDAD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FACTURAS" Relationship="Self.FACTPROV" FromRole="PROVEEDORES" ToRole="FACTURAS" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="USUARIO" />
+    </Key>
+    <Property Name="USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CLAVE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ESTADO_DE_CUENTA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="NOMBRES" />
+      <PropertyRef Name="APELLIDOS" />
+    </Key>
+    <Property Name="CODIGO" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRES" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDOS" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PAGOS" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BALANCE" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <Association Name="FK_CHECKES">
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CHEQUES" Type="Self.CHEQUES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURAS">
+        <PropertyRef Name="NUMERO_FACTURA" />
+      </Principal>
+      <Dependent Role="CHEQUES">
+        <PropertyRef Name="NUMERO_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FACTPROV">
+    <End Role="PROVEEDORES" Type="Self.PROVEEDORES" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDORES">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="CODIGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SCXPJORGEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHEQUES" EntityType="Self.CHEQUES" />
+    <EntitySet Name="FACTURAS" EntityType="Self.FACTURAS" />
+    <EntitySet Name="PROVEEDORES" EntityType="Self.PROVEEDORES" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+    <EntitySet Name="ESTADO_DE_CUENTA" EntityType="Self.ESTADO_DE_CUENTA" />
+    <AssociationSet Name="FK_CHECKES" Association="Self.FK_CHECKES">
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+      <End Role="CHEQUES" EntitySet="CHEQUES" />
+    </AssociationSet>
+    <AssociationSet Name="FACTPROV" Association="Self.FACTPROV">
+      <End Role="PROVEEDORES" EntitySet="PROVEEDORES" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

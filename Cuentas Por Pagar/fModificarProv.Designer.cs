@@ -147,6 +147,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fModificarProv
             // 
@@ -168,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "fModificarProv";
             this.Text = "Modificar datos proveedores";
+            this.Load += new System.EventHandler(this.fModificarProv_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

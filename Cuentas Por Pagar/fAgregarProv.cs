@@ -16,5 +16,21 @@ namespace Cuentas_Por_Pagar
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DatosProveedores.INSERTARPROVEEDOR(
+
+            txtCodigo.Text,
+            txtNombres.Text,
+            txtApellidos.Text,
+            txtDireccion.Text,
+            txtCiudad.Text,
+            txtTelefono.Text);
+
+            MessageBox.Show("EL PROVEEDOR"+" "+txtNombres.Text+" "+txtApellidos.Text+" "+
+                "HA SIDO AGREGADO", "AGREGAR PROVEEDOR");
+            this.Close();
+        }
     }
 }

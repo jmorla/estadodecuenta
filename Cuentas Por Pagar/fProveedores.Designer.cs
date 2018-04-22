@@ -67,6 +67,7 @@
             this.btnBorrar.TabIndex = 10;
             this.btnBorrar.Text = "Eliminar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnModificar
             // 
@@ -76,6 +77,7 @@
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -85,6 +87,7 @@
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // pSearch
             // 
@@ -152,6 +155,7 @@
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 6;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label7
             // 
@@ -228,6 +232,7 @@
             this.Controls.Add(this.dgProveedores);
             this.Name = "fProveedores";
             this.Text = "Mantenimiento de proveedores";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fProveedores_FormClosed);
             this.Load += new System.EventHandler(this.fProveedores_Load);
             this.pSearch.ResumeLayout(false);
             this.pSearch.PerformLayout();
